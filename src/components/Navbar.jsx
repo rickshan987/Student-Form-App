@@ -1,8 +1,15 @@
+import { Link } from 'react-router-dom';
+
 function Navbar() {
     return (
-        <nav className="Navbar">
-            <h1>Welcome to my app</h1>
+        <nav>
+            <h2>Welcome to my app</h2>
+
+            <Link to="/">Home</Link>
+            <Link to="/about">About</Link>
+            <Link to="/contact">Contact</Link>
         </nav>
     );
 }
+
 export default Navbar;
