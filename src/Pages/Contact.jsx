@@ -2,13 +2,14 @@ import students from '../components/StudentProfile';
 
 function Contact() {
     return (
-        <div>
-            <h1>Student Contacts</h1>
+        <div className="page">
+            <h2>Student Contact Details</h2>
 
             {students.map(student => (
                 <div key={student.id}>
-                    <h2>{student.name}</h2>
+                    <h3>{student.name}</h3>
                     <p>Phone: {student.phone}</p>
+                    <hr />
                 </div>
             ))}
         </div>

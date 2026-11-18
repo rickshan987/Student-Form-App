@@ -2,14 +2,16 @@ import students from '../components/StudentProfile';
 
 function About() {
     return (
-        <div>
-            <h1>About Students</h1>
+        <div className="page">
+            <h2>About Students</h2>
 
             {students.map(student => (
                 <div key={student.id}>
-                    <h2>{student.name}</h2>
+                    <h3>{student.name}</h3>
+                    <p>Register No: {student.regno}</p>
                     <p>Department: {student.dept}</p>
                     <p>Year: {student.year}</p>
+                    <hr />
                 </div>
             ))}
         </div>

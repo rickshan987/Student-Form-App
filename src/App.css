@@ -1,40 +1,57 @@
-* {
+body {
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    font-family: Arial;
 }
 
-.page {
-    text-align: center;
-    padding: 30px;
-}
-
-.cards {
+/* Navbar */
+nav {
     display: flex;
+    justify-content: flex-end;
+    gap: 30px;
+    padding: 25px 50px;
+}
+
+nav a {
+    color: black;
+    text-decoration: none;
+}
+
+/* Home page */
+.page h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Student cards */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 270px);
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 25px;
-    margin-top: 30px;
+    gap: 20px;
 }
 
 .card {
-    width: 300px;
-    border: 2px solid black;
+    border: 1px solid gray;
     border-radius: 10px;
     padding: 20px;
-    text-align: left;
 }
 
-.card h2 {
-    text-align: center;
-    margin-bottom: 15px;
-}
-
-.card hr {
-    border: 1px solid black;
-    margin-bottom: 15px;
+.card h4 {
+    margin-bottom: 25px;
 }
 
 .card p {
-    margin: 12px 0;
+    margin: 15px;
+}
+
+@media (max-width: 850px) {
+    .cards {
+        grid-template-columns: repeat(2, 270px);
+    }
+}
+
+@media (max-width: 600px) {
+    .cards {
+        grid-template-columns: 1fr;
+    }
 }
