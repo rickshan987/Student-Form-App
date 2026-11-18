@@ -1,22 +1,58 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Home from './Pages/Home';
-import About from './Pages/About';
-import Contact from './Pages/Contact';
+
+import { useState } from 'react';
 import './App.css';
 
 function App() {
-    return (
-        <BrowserRouter>
-            <Navbar />
+  const [name, setName] = useState("");
+  const [dept, setDept] = useState("");
+  const [age, setAge] = useState("");
 
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/contact" element={<Contact />} />
-            </Routes>
-        </BrowserRouter>
-    );
+  function handleChange(e) {
+    if (e.target.name === "name")
+      setName(e.target.value);
+    else if (e.target.name === "dept")
+      setDept(e.target.value);
+    else
+      setAge(e.target.value);
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    alert("Welcome " + name + "!");
+  }
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <h2>Student Form</h2>
+
+      <label>Enter your name:</label>
+
+      <input
+        type="text"
+        name="name"
+        value={name}
+        onChange={handleChange}
+      />
+      <label>Enter your dept:</label>
+
+      <input
+        type="text"
+        name="dept"
+        value={dept}
+        onChange={handleChange}
+      />
+       <label>Enter your age:</label>
+
+      <input
+        type="text"
+        name="age"
+        value={age}
+        onChange={handleChange}
+      />
+
+      <button type="submit">Submit</button>
+    </form>
+  );
 }
 
 export default App;
